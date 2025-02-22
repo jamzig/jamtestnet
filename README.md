@@ -10,6 +10,13 @@ The vectors are procedurally generated from a seed, making them deterministic an
 
 The format is compatible with: https://github.com/jam-duna/jamtestnet
 
+## How to Validate
+
+To validate these test vectors, simply ensure your implementation processes the pre_state from the first transition file (which serves as the genesis state), using the configuration parameters below. Apply each block to its corresponding pre_state following the JAM protocol specifications, then verify your computed post_state matches the provided one.
+
+This assumes teams have implemented the *inverse of the state merklization*.
+
+
 ## File Structure
 
 ```
@@ -34,7 +41,7 @@ pub const JAMDUNA_PARAMS = jam_params.Params{
     // JAMDUNA changes
     .max_ticket_entries_per_validator = 3, // N
     .max_authorizations_queue_items = 80, // Q
-    .max_authorizations_pool_items = 2,
+    .max_authorizations_pool_items = 8,
 };
 ```
 
