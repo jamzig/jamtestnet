@@ -16,6 +16,12 @@ To validate these test vectors, simply ensure your implementation processes the 
 
 This assumes teams have implemented the *inverse of the state merklization*.
 
+## Serialization Format
+
+A minimal extension to the merklization of the state as described in the Graypaper D.2. The merklization is a lossy format. This extention introduces minimal metadata for state components and deltas entries. This metadata enables full state deserialization.
+
+See: [SERIALIZATION_FORMAT.md](SERIALIZATION_FORMAT.md)
+
 
 ## File Structure
 
