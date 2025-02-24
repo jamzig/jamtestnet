@@ -51,32 +51,6 @@ pub const JAMDUNA_PARAMS = jam_params.Params{
 };
 ```
 
-## Data Format
-
-JamZig uses a simplified binary format focusing on key-value pairs, following JamDuna's format:
-
-```zig
-pub const TestStateTransition = struct {
-    pre_state: StateSnapshotRaw,
-    block: types.Block,
-    post_state: StateSnapshotRaw,
-};
-
-pub const StateSnapshotRaw = struct {
-    state_root: types.StateRoot,
-    keyvals: []KeyVal,
-};
-
-pub const KeyVal = struct {
-    key: []const u8,
-    val: []const u8,
-    id: []const u8,
-    desc: []const u8,
-};
-```
-
-NOTE: While JamZig export focuses on binary deserialization, the JSON files are provided in JamDuna's format for compatibility, including additional `id` and `desc` fields.
-
 ## Safrole Mode
 
 The test vectors alternate between keys and tickets mode to validate correct state progression and fallback behavior.
